@@ -7,7 +7,7 @@
     <body>
         <div id="pageContainer">
             <div id="mastHeadContainer">
-                Hello world!!  One more!
+                Hello world!! 
             </div>
 
             <div id="sideNavContainer">
