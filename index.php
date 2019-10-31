@@ -7,13 +7,17 @@
     <body>
         <div id="pageContainer">
             <div id="mastHeadContainer">
-                Hello world!! 
+                Hello worlder!! 
             </div>
 
             <div id="sideNavContainer">
+         
             </div>
 
             <div id="mainSectionContainer">
+              <div id="mainContentContainer">
+                  hello everyone!
+              </div>
             </div>
 
         </div>
