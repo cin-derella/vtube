@@ -39,6 +39,20 @@ html,body{
     width:100%;
 }
 
+
+#mastHeadContainer .logoContainer{
+    padding-top: 18px;
+    padding-left: 10px;
+}
+
+a{
+   color:black;
+}
+a:hover{
+    color:black;
+    text-decoration: none;
+ }
+
 #sideNavContainer{
     width: 240px;
     background-color: #f5f5f5;
