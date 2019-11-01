@@ -15,10 +15,20 @@
                 <button class="navShowHide">
                     <img src="assets/images/icons/menu.png">
                 </button>
+
                 <a class = "logoContainer" href="index.php">
                     <h2>Cin.derel.la<img src="assets/images/icons/video.png" title = "logo" alt = "Site logo"></h2>
                 </a>
                 
+                <div class="searchBarContainer">
+                    <form action="search.php" method = "GET">
+                        <input type="text" class="searchBar" name = "term" placeholder = "Search ...">
+                        <button class="searchButton">
+                           <img src="assets/images/icons/search.png">
+                        </button>
+                    </form>
+
+                </div>
             </div>
 
             <div id="sideNavContainer" style = "display:none">
