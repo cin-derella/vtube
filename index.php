@@ -27,8 +27,19 @@
                            <img src="assets/images/icons/search.png">
                         </button>
                     </form>
+                </div>
+                
+                <div class="rightIcons">
+                    <a href="upload.php">
+                        <img class = "upload" src="assets/images/icons/upload.png" alt="uploadIcon">
+                    </a>
+                    <a href="#">
+                        <img class = "profile" src="assets/images/profilePictures/default.png" alt="profilePictures">
+                    </a>
 
                 </div>
+
+
             </div>
 
             <div id="sideNavContainer" style = "display:none">
