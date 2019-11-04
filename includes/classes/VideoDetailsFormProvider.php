@@ -12,7 +12,7 @@
             $privacyInput = $this->createPrivacyInput();
             $categoriesInput = $this->createCategoriesInput();
             $uploadButton = $this->createUploadButton();
-                return " <form action='processing.php' method = 'POST'>
+                return " <form action='processing.php' method = 'POST' enctype='multipart/form-data'>
                     $fileInput 
                     $titleInput
                     $decriptionInput
@@ -37,7 +37,7 @@
 
         private function createDescriptionInput(){
             return  "<div class='form-group'>
-                 <textarea class='form-control' placeholder = 'Description' nanme = 'decriptionInput'rows='3'></textarea>
+                 <textarea class='form-control' placeholder = 'Description' name = 'descriptionInput'rows='3'></textarea>
                  </div>";
         }
 
