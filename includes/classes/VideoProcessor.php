@@ -3,7 +3,7 @@
         private $con;
         private $sizeLimit = 500000000;
         private $allowedTypes = array("mp4","flv","webm","mkv","vob","ogv","avi","wmv","mov","mpeg","mpg");
-        private $ffmpegPath = "ffmpeg/bin/ffmpeg";
+        private $ffmpegPath = "ffmpeg/ffmpeg";
 
         public function __construct($con){
             $this->con = $con;
@@ -36,6 +36,11 @@
                    echo "Upload failed";
                    return false;
                }
+               if(!$this->deleteFile($tempFilePath)){
+                echo "Upload failed\n";
+                return false;
+            }
+
             }
         }
 
@@ -87,6 +92,7 @@
         }
         public function convertVideoToMp4($tempFilePath,$finalFilePath){
             $cmd = "$this->ffmpegPath -i $tempFilePath $finalFilePath 2>&1";
+            echo $cmd . "<br>";
 
             $outputLog = array();
             exec($cmd,$outputLog,$returnCode);
@@ -100,5 +106,14 @@
             }
             return true;
         }
+
+        private function deleteFile($filePath){
+            if(!unlink($filePath)){
+                echo "Could not delete file\n";
+                return false;
+            }
+            return true;
+        }
     }
+
 ?>
