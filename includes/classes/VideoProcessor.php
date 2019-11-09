@@ -5,6 +5,8 @@
         private $allowedTypes = array("mp4","flv","webm","mkv","vob","ogv","avi","wmv","mov","mpeg","mpg");
         private $ffmpegPath = "ffmpeg/ffmpeg";
 
+        private $ffprobePath = "ffmpeg/ffprobe";
+
         public function __construct($con){
             $this->con = $con;
             
@@ -35,11 +37,16 @@
                if(!$this->convertVideoToMp4($tempFilePath,$finalFilePath)){
                    echo "Upload failed";
                    return false;
-               }
+                }   
                if(!$this->deleteFile($tempFilePath)){
                 echo "Upload failed\n";
                 return false;
-            }
+                }
+            
+                if(!$this->generateThumbnails($finalFilePath)){
+                echo "Upload failed-could not generate thumbnail\n";
+                return false;
+                }
 
             }
         }
@@ -113,6 +120,19 @@
                 return false;
             }
             return true;
+        }
+
+        public function generateThumbnails($filePath){
+            $thumbnailSize = "210x118";
+            $numThumbnails =3;
+            $pathToThumbnail = "uploads/videos/thumbnails";
+
+            $duration = $this->getVideoDuration($filePath);
+            echo "duration:$duration";
+
+        }
+        private function getVideoDuration($filePath){
+            return shell_exec("$this->ffprobePath -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $filePath");
         }
     }
 
