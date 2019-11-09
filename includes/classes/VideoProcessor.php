@@ -101,7 +101,7 @@
         }
         public function convertVideoToMp4($tempFilePath,$finalFilePath){
             $cmd = "$this->ffmpegPath -i $tempFilePath $finalFilePath 2>&1";
-            echo $cmd . "<br>";
+            //echo $cmd . "<br>";
 
             $outputLog = array();
             exec($cmd,$outputLog,$returnCode);
@@ -140,7 +140,7 @@
                 $fullThumbnailPath = "$pathToThumbnail/$videoId-$imageName";
 
                 $cmd = "$this->ffmpegPath -i $filePath -ss $interval -s $thumbnailSize -vframes 1 $fullThumbnailPath 2>&1";
-                echo $cmd . "<br>";
+                //echo $cmd . "<br>";
     
                 $outputLog = array();
                 exec($cmd,$outputLog,$returnCode);
