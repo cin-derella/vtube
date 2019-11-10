@@ -61,6 +61,20 @@ class Account{
             array_push($this->errorArray,Constants::$emailTaken);
         }
     }
+
+    private function validatePasswords($pw,$pw2){
+        if($pw != $pw2){
+            array_push($this->errorArray,Constants::$passwordsDoNotMatch);
+            return;
+        }
+        if(preg_match("/[^A-Za-z0-9]/",$pw)){
+            array_push($this->errorArray,Constants::$passwordNotAlphanumeric);
+            return;
+        }
+        if(strlen($pw)>30 || strlen($pw)<3){
+            array_push($this->errorArray,Constants::$passwordLength);
+        }
+    }
     public function getError($error){
         if(in_array($error,$this->errorArray)){
             return "<span class = 'errorMessage'>$error</span>";
