@@ -52,9 +52,11 @@
 
                     <?php echo $account->getError(Constants::$usernameCharacters);?>
                     <?php echo $account->getError(Constants::$usernameTaken);?>
-
                     <input type="text" name = "username" placeholder = "Username" autocomplete = "off" required>
 
+                    <?php echo $account->getError(Constants::$emailsDoNotMatch);?>
+                    <?php echo $account->getError(Constants::$emailInvalid);?>
+                    <?php echo $account->getError(Constants::$emailTaken);?>
                     <input type="email" name = "email" placeholder = "Email" autocomplete = "off" required>
                     <input type="email" name = "email2" placeholder = "Confirm email" autocomplete = "off" required>
 
