@@ -13,7 +13,9 @@
     <div class="signInContainer">
         <div class="column">
             <div class="header">
-
+                <h2>Cin.derel.la<img src="assets/images/icons/video.png" title = "logo" alt = "Site logo"></h2>
+                <h3>Sigh Up</h3>
+                <span>to continue to Cin.derel.la</span>
             </div>
             <div class="loginForm">
 
