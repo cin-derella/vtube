@@ -213,3 +213,11 @@ a:hover{
     font-weight: 400;
     color: #673ab7;
 }
+
+.errorMessage{
+    color:#f00;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+
+}
