@@ -14,17 +14,19 @@
         <div class="column">
             <div class="header">
                 <h2>Cin.derel.la<img src="assets/images/icons/video.png" title = "logo" alt = "Site logo"></h2>
-                <h3>Sigh Up</h3>
+                <h3>Sigh In</h3>
                 <span>to continue to Cin.derel.la</span>
             </div>
 
             <div class="loginForm">
-                <form action="signUp.php">
-                    
+                <form action="signIn.php">
+                    <input type="text" name = "username" placeholder="Username" require autocomplete="0ff">
+                    <input type="password" name = "password" placeholder="Password" require >
+                    <input type="submit" name = "submitButton" value="SUBMIT">
                 </form>
 
             </div>
-            <div class="signInMessage" href = "signIn.php">Already have an account? Sign in here!</div>
+            <a class="signInMessage" href = "signUp.php">Need an account? Sign up here!</a>
         </div>
 
     </div>
