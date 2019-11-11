@@ -23,11 +23,9 @@
         $wasSuccessful = $account->register($firstName,$lastName,$username,$email,$email2,$password,$password2);
 
         if($wasSuccessful){
-            echo "SUCCESS";
-            //Redirect user to index page
-        }
-        else{
-            echo "FAILED";
+           $_SESSION["userLoggedIn"]=$username;
+           header("Location:index.php");
+
         }
     }
 
