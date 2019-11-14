@@ -13,6 +13,7 @@ $video->incrementViews();
 
 ?>
 
+<script scr="assets/js/videoPlayerAction.js"></script>
 <div class="watchLeftColumn">
 <?php  
     $videoPlayer = new VideoPlayer($video);
