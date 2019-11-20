@@ -11,10 +11,10 @@ $(document).ready(function(){
            nav.show();
        }
        main.toggleClass("leftPadding");
-    })
-
-
-
-
+    });
 
 });
+
+function notSignedIn(){
+    alert("You must be signed in to perform this action");
+}

@@ -26,7 +26,7 @@ class VideoInfoSection{
         return "<div class = 'videoInfo'>
                <h1>$title</h1>
                <div class='bottomSection'>
-                <span class = 'viewCount'>$views</span>
+                <span class = 'viewCount'>$views views</span>
                 $controls
                </div>
                </div>";
@@ -34,7 +34,17 @@ class VideoInfoSection{
     }
 
     private function createSecondaryInfo(){
+       // $description = $this->video->getDescription();
+        //$uploadDate = $this->video->getUploadDate();
+        //$uploadedBy = $this->video->getUploadedBy();
+        //$profileButton = ButtonProvider ::createUserProfileButton;
 
+
+        return "<div class = 'secondaryInfo'>
+                <div class='topRow'>
+             
+                </div>
+                </div>";
 
     }
 }

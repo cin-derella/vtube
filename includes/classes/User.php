@@ -12,6 +12,10 @@ class User{
 
     }
 
+    public static function isLoggedIn(){
+        return isset($_SESSION["userLoggedIn"]);
+    }
+
     public function getUsername(){
         return $this->sqlData["username"];
     }
