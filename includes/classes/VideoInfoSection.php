@@ -40,21 +40,28 @@ class VideoInfoSection{
        //echo "<br>uploadBy [$uploadedBy][$uploadDate]<br>";
        $profileButton = ButtonProvider ::createUserProfileButton($this->con,$uploadedBy);
 
+       if($uploadedBy == $this->userLoggedInObj->getUsername()){
+            $actionButton = ButtonProvider::createEditVideoButton($this->video->getId());
+       }
+       else{
+           $actionButton = "";
+       }
+
 
         return "<div class = 'secondaryInfo'> 
-                <div class='topRow'>
+                     <div class='topRow'>
                     $profileButton
 
-                <div class='uploadInfo'>
-                    <span class='owner'>
-                        <a href = 'profile.php?username=$uploadedBy'>
-                            $uploadedBy
-                    </span>
+                        <div class='uploadInfo'>
+                            <span class='owner'>
+                                 <a href = 'profile.php?username=$uploadedBy'>
+                                    $uploadedBy
+                            </span>
 
-                    <span class='date'>Published on $uploadDate</span>
-                </div>
-
-                </div>
+                             <span class='date'>Published on $uploadDate</span>
+                      </div>
+                        $actionButton
+                    </div>
                 </div>";
 
     }
