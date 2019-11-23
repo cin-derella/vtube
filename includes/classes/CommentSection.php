@@ -16,8 +16,7 @@ class CommentSection{
 
     private function createCommentSection(){
         $numComments = $this->video->getNumberOfComments();
-        echo $numComments;
-        
+
         $postedBy = $this->userLoggedInObj->getUsername();
         $videoId = $this->video->getId();
 
@@ -25,6 +24,23 @@ class CommentSection{
         $commentAction = "postComment(this,\"$postedBy\",$videoId,null,\"comments\")";
 
         $commentButton = ButtonProvider::createButton("COMMENT",null,$commentAction,"postComment");
+
+        //get comments html
+
+        return "<div class = 'commentSection'>
+                    <div class='header'>
+                        <span class='commentCount'>$numComments Comments</span>
+                        <div class='commentForm'>
+                            $profileButton
+                            <textarea class = 'commentBodyClass' placeholder = 'Add a public comment'></textarea>
+                            $commentButton
+                        </div>
+                    </div>
+
+                    <div class='comments'>
+                    
+                    </div>
+                </div>";
     }
 }
 ?>
