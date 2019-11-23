@@ -22,6 +22,8 @@ class Comment{
     }
 
     public function create(){
+        $id = $this->sqlData["id"];
+        $videoId =$this->getVideoId();
         $body = $this->sqlData['body'];
         $postedBy = $this->sqlData["postedBy"];
         $profileButton = ButtonProvider::createUserProfileButton($this->con,$postedBy);
@@ -31,6 +33,17 @@ class Comment{
 
         $commentControlsObj = new CommentControls($this->con,$this,$this->userLoggedInObj);
         $commentControls = $commentControlsObj->create();
+
+        $numResponses = $this->getNumberofReplies();
+      
+
+        if($numResponses>0){
+            $viewRepliesText = "<span class='repliesSection viewReplies' onclick = 'getReplies($id,this,$videoId)'>
+                                View all $numResponses replies </span>";
+        }
+        else{
+            $viewRepliesText = "<div class='relpliesSection'></div>";
+        }
 
         return "<div class ='itemContainer'>
                     <div class='comment'>
@@ -49,6 +62,7 @@ class Comment{
                         </div>
                     </div>
                     $commentControls
+                    $viewRepliesText
                 </div>";
     }
 
@@ -60,6 +74,15 @@ class Comment{
     public function getVideoId(){
         return $this->videoId;
         
+    }
+
+    public function getNumberofReplies(){
+        $query =$this->con->prepare("SELECT count(*) FROM comments WHERE responseTo = :responseTo");
+        $query->bindParam(":responseTo",$id);
+        $id = $this->sqlData["id"];
+        $query->execute();
+
+        return $query->fetchColumn();
     }
 
     function time_elapsed_string($datetime, $full = false) {
