@@ -20,4 +20,8 @@ function postComment(button,postedBy,videoId,replyTo,containerClass){
 }
 
 function toggleReply(button) {
+    var parent = $(button).closest(".itemContainer");
+    var commentForm = parent.find(".commentForm").first();
+
+    commentForm.toggleClass("hidden");
 }
