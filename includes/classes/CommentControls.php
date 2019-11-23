@@ -26,7 +26,7 @@ class CommentControls{
                </div>";
     }
 
-    private function createRelpyButton(){
+    private function createReplyButton(){
         $text = "REPLY";
         $action = "toggleReply(this)";
         return ButtonProvider::createButton($text,null,$action,null);
