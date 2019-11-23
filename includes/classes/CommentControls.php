@@ -14,14 +14,14 @@ class CommentControls{
 
     public function create(){
 
-        $relyButton = $this->createReplyButton();
-        $likesCount = $this->createLikeCount();
+        $replyButton = $this->createReplyButton();
+        $likesCount = $this->createLikesCount();
         $likeButton = $this->createlikeButton();
         $dislikeButton = $this->createDislikeButton();
         $replySection = $this->createRelpySection();
 
         return "<div class = 'controls'>
-            $relyButton
+            $replyButton
             $likesCount
             $likeButton
             $dislikeButton
@@ -35,7 +35,7 @@ class CommentControls{
         return ButtonProvider::createButton($text,null,$action,null);
     }
 
-    private function createlikeCount(){
+    private function createlikesCount(){
         $text = $this->comment->getLikes();
         if($text == 0){
             $text = "";
@@ -61,7 +61,7 @@ class CommentControls{
                     $profileButton
                     <textarea class = 'commentBodyClass' placeholder = 'Add a public comment'></textarea>
                     $cancelButton
-                    $postedBy
+                    $postButton
 
                 </div>";
     }
