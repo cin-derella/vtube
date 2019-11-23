@@ -21,7 +21,7 @@ class CommentSection{
         $videoId = $this->video->getId();
 
         $profileButton = ButtonProvider::createUserProfileButton($this->con,$postedBy);
-        $commentAction = "postComment(this,\"$postedBy\",$videoId,null,\"comments\")";
+        $commentAction = "postComment(this,\"$postedBy\",$videoId, 11, \"comments\")";
 
         $commentButton = ButtonProvider::createButton("COMMENT",null,$commentAction,"postComment");
 
