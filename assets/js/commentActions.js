@@ -26,7 +26,7 @@ function toggleReply(button) {
     commentForm.toggleClass("hidden");
 }
 
-function likeComment($commentId,button,videoId){
+function likeComment(commentId,button,videoId){
  
     $.post("ajax/likeComment.php",{commentId:commentId,videoId:videoId})
     .done(function(data){
