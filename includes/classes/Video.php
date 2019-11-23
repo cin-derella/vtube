@@ -213,5 +213,25 @@ class Video{
         $query->execute();
         return $query->rowCount();
     }
+
+    public function getComments(){
+        //echo "<br>getComments here2<br>";
+        $query=$this->con->prepare("SELECT * FROM comments WHERE videoId=:videoId AND responseTo=0 ORDER BY datePosted DESC");
+        $query->bindParam(":videoId",$id);
+
+        $id = $this->getId();
+        $query->execute();
+        $rowCount = $query->rowCount();
+        //echo "<br>rowCount[$rowCount][$id]<br>";
+
+        $comments = array();
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
+            //echo "<br>one row[$row]</br>";
+            //debug_zval_dump($row);echo "<br>";
+            $comment = new Comment($this->con,$row,$this->userLoggedInObj,$id);
+            array_push($comments,$comment);
+        }
+        return $comments;
+    }
 }
 ?>
