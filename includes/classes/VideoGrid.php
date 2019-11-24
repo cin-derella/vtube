@@ -26,7 +26,7 @@
             }
             return "$header
                     <div class = '$this->gridClass'>
-                    
+                        $gridItems
             
                     </div>";
         }
@@ -37,7 +37,7 @@
 
             $elementsHtml = "";
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $videos = new Video($this->con,$row,$this->userLoggedInObj);
+                $video = new Video($this->con,$row,$this->userLoggedInObj);
                 $item = new VideoGridItem($video,$this->largeMode);
                 $elementsHtml .=$item->create();
             }

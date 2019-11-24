@@ -9,9 +9,26 @@
         }
 
         public function create(){
-            return "";
+            $thumbnail = $this->createThumbnail();
+            $details = $this->createDetails();
+            $url = "watch.php?id=" . $this->video->getId();
+
+
+            return "<a href = '$url'>
+                        <div class='videoGridItem'>
+                            $thumbnail
+                            $details
+                        </div>
+                    </a>";
 
         }
 
+        private function createThumbnail(){
+            return "test";
+        }
+
+        private function createDetails(){
+            return "";
+        }
     }
 ?>
