@@ -505,6 +505,11 @@ a:hover{
     font-weight: 500;
 }
 
+.videoGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .suggestions .videoGridItem{
     display: flex;
     height: auto;
