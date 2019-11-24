@@ -220,6 +220,27 @@ class Comment{
 
         }
     }
+
+    public function getReplies(){
+        //echo "<br>getComments here2<br>";
+        $query=$this->con->prepare("SELECT * FROM comments WHERE responseTo= :commentId ORDER BY datePosted ASC");
+        $query->bindParam(":commentId",$id);
+
+        $id = $this->getId();
+        $query->execute();
+        $rowCount = $query->rowCount();
+        //echo "<br>rowCount[$rowCount][$id]<br>";
+
+        $comments = "";
+        $videoId = $this->getVideoId();
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
+            //echo "<br>one row[$row]</br>";
+            //debug_zval_dump($row);echo "<br>";
+            $comment = new Comment($this->con,$row,$this->userLoggedInObj,$videoId);
+            $comments .=$comment->create();
+        }
+        return $comments;
+    }
 }
 
 ?>
