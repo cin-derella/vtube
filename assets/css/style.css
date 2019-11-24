@@ -511,9 +511,9 @@ a:hover{
 }
 
 .videoGridItem{
+    height: 200px;
     margin-right: 4px;
     margin-bottom: 24px;
-    float: left;
 }
 
 .videoGridItem .thumbnail{
