@@ -7,8 +7,13 @@ function postComment(button,postedBy,videoId,replyTo,containerClass){
 
         $.post("ajax/postComment.php",{commentText:commentText, postedBy:postedBy,videoId:videoId,responseTo:replyTo})
         .done(function(comment){
+            if(!replyTo){
             //alert(`[${containerClass},${comment}]`);
-            $("."+containerClass).prepend(comment);
+                $("."+containerClass).prepend(comment);
+            }
+            else{
+                $(button).parent().siblings("."+containerClass).append(comment);
+            }
         });
 
     }
@@ -95,5 +100,5 @@ function getReplies(commentId,button,videoId){
         replies.append(comments);
 
         $(button).replaceWith(replies);
-    })
+    });
 }

@@ -18,7 +18,7 @@ class CommentControls{
         $likesCount = $this->createLikesCount();
         $likeButton = $this->createlikeButton();
         $dislikeButton = $this->createDislikeButton();
-        $replySection = $this->createRelpySection();
+        $replySection = $this->createReplySection();
 
         return "<div class = 'controls'>
             $replyButton
@@ -43,7 +43,7 @@ class CommentControls{
         return "<span class='likesCount'>$text</span>";
     }
 
-    private function createRelpySection(){
+    private function createReplySection(){
 
         $postedBy = $this->userLoggedInObj->getUsername();
         $videoId = $this->comment->getVideoId();
