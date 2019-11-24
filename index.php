@@ -1,14 +1,11 @@
 <?php require_once("includes/header.php");?>
 
-<?php 
-//session_destroy();
+<div class="videoSection">
+    <?php
+        $videoGrid = new VideoGrid($con,$userLoggedInObj->getUsername());
+        echo $videoGrid->create(null,"Recommended",false);
+    ?>
 
-    if(isset($_SESSION["userLoggedIn"])){
-        echo "user is logged in as " .$userLoggedInObj->getName();
-    }
-    else{
-        echo "not logged in";
-    }
-?>
+</div>
 
 <?php require_once("includes/footer.php");?>
