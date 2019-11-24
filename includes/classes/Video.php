@@ -48,6 +48,12 @@ class Video{
         $date = $this->sqlData["uploadDate"];
         return date("M j.Y",strtotime($date));
     }
+
+    public function getTimestamp(){
+        $date = $this->sqlData["uploadDate"];
+        return date("M jS.Y",strtotime($date));
+    }
+
     public function getViews(){
         return $this->sqlData["views"];
     }
