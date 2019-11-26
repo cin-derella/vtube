@@ -598,28 +598,29 @@ a:hover{
     flex:1;
 }
 
-.videoGrid .large{
+.videoGrid.large{
     flex-direction: column;
     flex:1;
 }
 
-.videoGrid .large .videoGridItem{
+.videoGrid.large .videoGridItem{
     height: auto;
     display: flex;
 }
 
 
-.videoGrid .large .videoGridItem .thumbnail{
+.videoGrid.large .videoGridItem .thumbnail{
     width: 266px;
     height: 138px;
     margin-right: 16px;
 }
 
-.videoGrid .large .videoGridItem .details{
+.videoGrid.large .videoGridItem .details{
     max-width: 600px;
+    flex:1;
 }
 
-.videoGrid .large .videoGridItem .details .title{
+.videoGrid.large .videoGridItem .details .title{
     font-size: 18px;
     line-height: 24px;
 }
