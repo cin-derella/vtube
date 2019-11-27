@@ -18,5 +18,10 @@ class ProfileData{
 
         return $query->rowCount()!=0;
     }
+
+    public function getCoverPhoto(){
+
+        return "assets/images/coverPhotos/default-cover-photo.jpg";
+    }
 }
 ?>
