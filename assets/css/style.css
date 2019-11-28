@@ -713,13 +713,13 @@ a:hover{
 .coverPhotoContainer .coverPhoto{
     width:100%;
     object-fit: cover;
-    max-height: 30%;
+    max-height: 100%;
     vertical-align: middle;
 }
 
 .coverPhotoContainer .channelName{
     position: absolute;
-    top:calc(20% - 80px);
+    top:calc(50% - 40px);
     left:calc(0%);
     font-size: 50px;
     color:#fff;

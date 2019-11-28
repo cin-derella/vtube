@@ -21,7 +21,7 @@ class ProfileData{
 
     public function getCoverPhoto(){
 
-        return "assets/images/coverPhotos/default-cover-photo.jpg";
+        return "assets/images/coverPhotos/cropped.jpg";
     }
 
     public function getProfileUserFullName(){
@@ -29,7 +29,14 @@ class ProfileData{
         return $this->profileUserObj->getName();
     }
 
-    
+    public function getProfilePic(){
 
+        return $this->profileUserObj->getProfilePic();
+    }
+
+    public function getSubscriberCount(){
+
+        return $this->profileUserObj->getSubscriberCount();
+    }
 }
 ?>
