@@ -7,7 +7,7 @@
             $emailInput = $this->createEmailInput($email);
             $saveButton= $this->createSaveUserDetailsButton();
  
-                return " <form action='processing.php' method = 'POST' enctype='multipart/form-data'>
+                return " <form action='settings.php' method = 'POST' enctype='multipart/form-data'>
                     <span class ='title'>User details</span>
                     $firstNameInput 
                     $firstLastInput
@@ -24,7 +24,7 @@
 
             $saveButton= $this->createSavePasswordButton();
  
-                return " <form action='processing.php' method = 'POST' enctype='multipart/form-data'>
+                return " <form action='settings.php' method = 'POST' enctype='multipart/form-data'>
                     <span class ='title'>Update password</span>
                     $oldPasswordInput 
                     $newPassword1Input
