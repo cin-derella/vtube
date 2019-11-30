@@ -59,7 +59,7 @@ class User{
         $query->bindParam(":userTo",$username);
         $username = $this->getUsername();
         $query->execute();
-        return $query->rowCount()>0;
+        return $query->rowCount();
     }
 
     public function getSubscriptions(){

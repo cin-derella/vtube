@@ -603,6 +603,10 @@ a:hover{
     flex:1;
 }
 
+.videoGrid.large a {
+    height: 180px;
+}
+
 .videoGrid.large .videoGridItem{
     height: auto;
     display: flex;

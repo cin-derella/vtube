@@ -89,7 +89,8 @@
         private function insertVideoData($uploadData,$filePath){
             $query = $this->con->prepare("INSERT INTO videos(title,uploadedBy,description,privacy,category,filePath)
                                             VALUES(:title,:uploadedBy,:description,:privacy,:category,:filePath)");
-           
+            //$uploadData->description = str_replace("'", "", $uploadData->description); 
+            
             $query->bindParam(":title",$uploadData->title);
             $query->bindParam(":uploadedBy",$uploadData->uploadedBy);
             $query->bindParam(":description",$uploadData->description);

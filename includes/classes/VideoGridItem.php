@@ -14,7 +14,7 @@
             $url = "watch.php?id=" . $this->video->getId();
 
 
-            return "<a href = '$url'>
+            return "<a class='videoItem' href = '$url'>
                         <div class='videoGridItem'>
                             $thumbnail
                             $details
