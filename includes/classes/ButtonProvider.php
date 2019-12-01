@@ -36,6 +36,9 @@ class ButtonProvider{
         $userObj = new User($con,$username);
         $profilePic = $userObj->getProfilePic();
         $link = "profile.php?username=$username";
+	if ($profilePic == "") {
+		$profilePic = "assets/images/profilePictures/default.png";
+	}
 
         //echo "<br>profilePic[$profilePic][$username]<br>";
         return "<a href = '$link'>
